@@ -8,13 +8,13 @@ RUN mkdir -p /web
 RUN chown -R nginx:nginx /web
 
 # Copy custom Nginx configuration
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY nginx/* /etc/nginx/
 
 # Copy html files
-COPY index.html /web
+COPY claude /web
 
 # Switch back to the default non-root user
-USER nginx
+#USER nginx
 
 # Expose port 80 to the outside world
 EXPOSE 80
